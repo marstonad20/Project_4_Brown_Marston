@@ -22,7 +22,10 @@ public class VigenereCipher extends Cipher {
 	}
 	
 	public VigenereCipher(VigenereCipher other){
-		// TODO: complete this copy constructor
+		this.subCiphers = new ArrayList<CaesarCipher>();
+		for(CaesarCipher otherCaesarCipher: other.subCiphers) {
+			this.subCiphers.add(new CaesarCipher(otherCaesarCipher));
+		}
 	}
 	
 	@Override
